@@ -2,7 +2,7 @@ package meikaiJava.Chap06;
 
 import java.util.Random;
 import java.util.Scanner;
-
+//int型の配列を作り全要素を1~10の乱数で埋め尽くすプログラム
 public class Ex0609 {
 
 	public static void main(String[] args) {
