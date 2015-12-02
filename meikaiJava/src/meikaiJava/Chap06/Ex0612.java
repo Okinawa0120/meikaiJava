@@ -2,9 +2,9 @@ package meikaiJava.Chap06;
 
 import java.util.Random;
 import java.util.Scanner;
-//連続する要素が同じ値を持たないように演習6-9を改良したプログラム
-public class Ex0610 {
-
+//配列の要素の並びをシャッフルするプログラム
+public class Ex0612 {
+	
 	public static void main(String[] args) {
 		Random rand = new Random();
 		Scanner stdIn = new Scanner(System.in);
@@ -14,12 +14,17 @@ public class Ex0610 {
 			l = stdIn.nextInt();
 		}while(l<0);
 		int[] a = new int [l];
-		a[0] = rand.nextInt(10)+1;
+		for(int i = 0;i < a.length;i++){
+			a[i] = i;
+		}
 		for(int i = 1;i < l;i++){
-			do{
-				a[i] = rand.nextInt(10)+1;
-			}while(a[i]==a[i-1]);
-			System.out.println(a[i]);
+			int temp = a[i];
+			int n = rand.nextInt(a.length);
+			a[i] = a[n];
+			a[n] = temp;
+		}
+		for(int i : a){
+			System.out.println(i);
 		}
 	}
 
