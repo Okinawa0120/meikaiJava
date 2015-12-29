@@ -2,12 +2,17 @@ package meikaiJava.Chap07;
 
 import java.util.Scanner;
 
-//配列aからa[idx]を先頭にnこの要素を削除する(idxより後ろの要素をnずらす)メソッド
-public class Ex0719 {
-	static void aryRmvN(int a[],int idx,int n){
-		for(;idx<a.length-n;idx++){
-			a[idx] = a[idx+n];
+//配列aからa[idx]を先頭にnこの要素を削除した配列を生成するメソッド
+public class Ex0725 {
+	static int[] arrayRmv0fN(int a[],int idx,int n){
+		int[] rmv = new int[a.length-n];
+		for(int i = 0;i<idx;i++){
+			rmv[i]=a[i];
 		}
+		for(;idx<a.length-n;idx++){
+			rmv[idx] = a[idx+n];
+		}
+		return rmv;
 	}
 	public static void main(String[] args) {
 		Scanner stdIn = new Scanner(System.in);
@@ -25,9 +30,9 @@ public class Ex0719 {
 		int idx = stdIn.nextInt()-1;
 		System.out.println("なんこの要素を削除しますか?:");
 		int n = stdIn.nextInt();
-		aryRmvN(a, idx,n);
+		int[] rmv = arrayRmv0fN(a, idx, n);
 		for(int i = 0;i<a.length;i++){
-			System.out.println(a[i]);
+			System.out.println(rmv[i]);
 		}
 	}
 }
