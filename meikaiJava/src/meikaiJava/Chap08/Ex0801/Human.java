@@ -7,7 +7,7 @@ public class Human {
 	private int age;
 	private double fat;
 	
-	Human(String name,int height,int weight,int age,double fat) {
+	public Human(String name,int height,int weight,int age,double fat) {
 		this.name=name;
 		this.height=height;
 		this.weight=weight;
@@ -15,23 +15,23 @@ public class Human {
 		this.fat=fat;
 	}
 	
-	String getName(){
+	public String getName(){
 		return name;
 	}
-	int getHeight(){
+	public int getHeight(){
 		return height;
 	}
-	int getWeight(){
+	public int getWeight(){
 		return weight;
 	}
-	int getAge(){
+	public int getAge(){
 		return age;
 	}
-	double getFat(){
+	public double getFat(){
 		return fat;
 	}
 	
-	void diet(){
+	public void diet(){
 		fat *= 0.9;
 	}
 }
